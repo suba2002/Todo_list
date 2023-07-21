@@ -22,26 +22,39 @@ function Todo() {
   };
   return (
     <div className="todo__container">
-      <div className="todo__content">
-      <div className="todo__add">
-        <input
-          placeholder="Add Item "
-          value={currentItem}
-          onChange={onChangeHandler}
-        />
-        <button disabled={!currentItem} onClick={addItemList}>
-          Add
-        </button>
+      <div className="todo__split">
+        <div className="todo__about">
+          <h1>TODO LIST</h1>
+          <h4> "your compass to navigate the sea of productivity."</h4>
         </div>
-        <div className="todo__itemlist">
-          <ol>
-            {itemList.map((item, index) => (
-              <li key={index}>
-                <p>{item}</p>
-                <button onClick={() => deleteItem(index)}>Delete</button>
-              </li>
-            ))}
-          </ol>
+        <div className="todo__content">
+          <div className="todo__add">
+            <h1>ADD TODO</h1>
+            <div className="todo__task">
+              <input
+                placeholder="Add Item "
+                value={currentItem}
+                onChange={onChangeHandler}
+              />
+              <button
+                type="submit"
+                disabled={!currentItem}
+                onClick={addItemList}
+              >
+                Add
+              </button>
+            </div>
+          </div>
+          <div className="todo__itemlist">
+            <ol>
+              {itemList.map((item, index) => (
+                <li key={index}>
+                  <p>{item}</p>
+                  <button onClick={() => deleteItem(index)}>Delete</button>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </div>

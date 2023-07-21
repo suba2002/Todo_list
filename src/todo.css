@@ -1,15 +1,86 @@
-.todo__container {
-  padding: 35px;
+.todo__split {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 80vh;
+  padding: 2vh;
 }
 
-.todo__content {
+.todo__about > h4 {
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+
+.todo__about > h1 {
+  font-size: 44px;
+  text-shadow: 3px 3px #969292;
+  color: #fff;
+  text-align: center;
+}
+
+/* .todo__content {
   width: 35%;
   background-color: #303030;
   padding: 70px 60px 90px;
   border-radius: 10px;
   position: absolute;
   right: 0px;
+  top:10%;
   margin-right: 35px; 
+} */
+
+.todo__content {
+  background-color: #303030;
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.todo__add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.todo__task > input {
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: #696666;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  width: 20vw;
+  color: #fff;
+}
+
+.todo__task > button {
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 7px;
+  width: 50px;
+  background-color: #e0d9d9;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.todo__task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+}
+
+.todo__itemlist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 li {
@@ -21,7 +92,7 @@ li {
 
 li > p {
   border: none;
-  width: 15vw;
+  width: 14vw;
   overflow-wrap: break-word;
   padding: 7px;
   background-color: #696666;
@@ -29,56 +100,51 @@ li > p {
   margin-right: 2vw;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+  color: #fff;
 }
 
 li > button {
   border: none;
   padding: 7px;
-  background-color: #696666;
+  background-color: rgb(236, 95, 95);
   border-radius: 8px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
 }
 
-.todo__add > input {
-  border: none;
-  outline: none;
-  border-radius: 7px;
-  padding: 10px;
-  background-color: #696666;
-  color: #000;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  width: 220px;
-}
-
-.todo__add > button {
-  border: none;
-  outline: none;
-  border-radius: 7px;
-  padding: 7px;
-  width: 50px;
-  background-color: #696666;
-  color: #000;
+::placeholder {
+  color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
 }
 
-.todo__add {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2vw;
+button:hover{
+  background-color: #faf8f8;
 }
 
-.todo__itemlist{
+@media (min-width: 768px) and (max-width: 1024px) {
+  .todo__container {
     display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .todo__task > input {
+    width: 20vw;
+  }
+
+  li > p {
+    width: 14vw;
+  }
+
+  .todo__split {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-::placeholder{
-    color: #000;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+  }
+  .todo__about>h4{
+    font-size: 20px;
+  }
 }
